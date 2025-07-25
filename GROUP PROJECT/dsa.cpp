@@ -9,14 +9,13 @@
 using namespace std;
 using namespace std::chrono;
 
-// ✅ Generate unique 8-digit IDs with prefix 220 (e.g. 220xxxxx)
 vector<int> generateStudentIDs(int size) {
     vector<int> ids;
     unordered_set<int> usedIDs;
 
     while (ids.size() < size) {
-        int suffix = rand() % 100000;       // Last 5 digits
-        int id = 22000000 + suffix;         // Full 8-digit ID starting with 220
+        int suffix = rand() % 100000;       
+        int id = 22000000 + suffix;         
 
         if (usedIDs.find(id) == usedIDs.end()) {
             ids.push_back(id);
@@ -27,7 +26,6 @@ vector<int> generateStudentIDs(int size) {
     return ids;
 }
 
-// Linear Search
 int linearSearch(const vector<int>& arr, int target, int& steps, bool verbose = true) {
     steps = 0;
     for (int i = 0; i < arr.size(); i++) {
@@ -41,7 +39,6 @@ int linearSearch(const vector<int>& arr, int target, int& steps, bool verbose = 
     return -1;
 }
 
-// Binary Search
 int binarySearch(const vector<int>& arr, int target, int& steps, bool verbose = true) {
     int left = 0, right = arr.size() - 1;
     steps = 0;
@@ -62,7 +59,6 @@ int binarySearch(const vector<int>& arr, int target, int& steps, bool verbose = 
     return -1;
 }
 
-// Print student IDs
 void printIDs(const vector<int>& ids) {
     for (int id : ids) {
         cout << id << " ";
