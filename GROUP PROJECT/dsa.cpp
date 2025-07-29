@@ -108,7 +108,7 @@ int main() {
             auto start = high_resolution_clock::now();
             linearSearch(ids, searchID, stepsTimed, false);
             auto stop = high_resolution_clock::now();
-            timeTaken = duration_cast<microseconds>(stop - start).count();
+            timeTaken = duration_cast<nanoseconds>(stop - start).count();
 
         } else if (choice == 2) {
             cout << "\n[Sorting array before Binary Search...]\n";
@@ -124,7 +124,7 @@ int main() {
             auto start = high_resolution_clock::now();
             binarySearch(sortedIDs, searchID, stepsTimed, false);
             auto stop = high_resolution_clock::now();
-            timeTaken = duration_cast<microseconds>(stop - start).count();
+            timeTaken = duration_cast<nanoseconds>(stop - start).count();
 
         } else {
             cout << "❌ Invalid choice!\n";
@@ -138,7 +138,7 @@ int main() {
             cout << "❌ Student ID " << searchID << " not found." << endl;
         }
         cout << "Steps taken: " << stepsTimed << endl;
-        cout << "Time taken: " << timeTaken << " microseconds\n";
+        cout << "Time taken: " << timeTaken << " nanoseconds\n";
 
         cout << "\nType 'X' to exit or 'C' to search again: ";
         cin >> action;
